@@ -5,9 +5,10 @@ const superComparison = (a, b) => {
     text += (a+b > 10)? `Sua soma é ${a+b}, que é maior que 10 `
             :(a+b < 10)? `Sua soma é ${a+b}, que é menor que 10 `
             :``;  
-    text += (a+b > 20)? `Sua soma é ${a+b}, que é maior que 10 `
-            :(a+b < 20)? `Sua soma é ${a+b}, que é menor que 10 `
-            :``; 
+    text += (a+b > 20)? `Sua soma é ${a+b}, que é maior que 20.`
+            :(a+b < 20)? `Sua soma é ${a+b}, que é menor que 20.`
+            :`.`; 
+    return text;
 } 
 
-console.log(superComparison(1, 2));
+console.log(superComparison(5, 5));
