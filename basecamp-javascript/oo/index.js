@@ -2,9 +2,6 @@
 /* 
 Atividade: Conta Bancária
 
-Crie a classe ContaBancaria, que possui os parâmetros agencia, numero, tipo e saldo;
-Dentro de ContaBancaria, construa o getter e o setter de saldo;
-Dentro de ContaBancaria, crie os métodos sacar e depositar;
 Crie uma classe-filha chamada ContaCorrente que herda todos esses parâmetros e ainda possua o parâmetro cartaoCredito;
 Ainda em ContaCorrente, construa o getter e o setter de cartaoCredito;
 Ainda em ContaCorrente, faça com que o tipo seja 'conta corrente' por padrão;
@@ -20,14 +17,24 @@ class ContaBancaria {
         this.tipo = tipo,
         this.saldo = saldo
     }
-    get() {
-        return this._tipo
+    // SALDO
+    get = () => this._saldo
+    set = (val) => this._saldo = val
+
+    sacar(val) {
+        if(val > this.saldo) {
+            return "Operação inválida"
+        }
+        this._saldo -= val
+        return this._saldo;
     }
-    set(val) {
-        this._tipo = val
+
+    depositar(val) {
+        this._saldo += val;
+        return this._saldo;
     }
 }
 
 const marcelo = new ContaBancaria(123, 28532, 'cc', 124.05)
-marcelo.tipo = 'ct'
-console.log(marcelo.tipo)
+
+console.log(marcelo.saldo)
