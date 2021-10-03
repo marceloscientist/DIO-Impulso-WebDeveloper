@@ -12,4 +12,12 @@ users.set('Monty','admin');
 users.set('Seath','regular');
 users.set('Beaver','regular');
 
+const allAdmins = (map) => {
+    let admins = []
+    for (const [key, value] of users.entries()) 
+        if(value == 'admin') admins.push(key); 
+    return admins 
+}
+
+const admins = allAdmins(users).map(ad => console.log(ad))
 
